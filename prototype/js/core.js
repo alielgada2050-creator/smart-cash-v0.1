@@ -31,7 +31,7 @@ function loadState(){
 SC.S = loadState();
 let userIdx = null;
 const reindex = () => { userIdx = new Map(SC.S.users.map(u=>[u.id,u])) };
-reindex();
+reindex(); SC.reindex = reindex;
 SC.save = () => { if(!store.set("state."+SC.ws, JSON.stringify(SC.S))) SC.saveFailed = true };
 SC.reset = () => { SC.S = D.seedFor(SC.ws); reindex(); SC.save(); idbClear() };
 SC.switchWs = ws => { if(!SC.WS.includes(ws) || ws===SC.ws) return; SC.save(); SC.ws = ws; store.set("ws", ws); SC.S = loadState(); reindex() };

@@ -11,6 +11,9 @@ Prototype of an expense, custody and invoice management app (plans: individuals,
 ## Deploy
 Pushing to `main` builds `dist/` and publishes it with GitHub Pages (Settings → Pages → Source: GitHub Actions).
 
+## Production build
+`python3 app/build.py` produces `dist/` with **no sample data**: first run shows "Create your workspace" (owner account), then the owner adds users. See `docs/GITHUB_DEPLOY.md`.
+
 ## Data
 Everything is stored in the browser on the device (no server, no sync). Sample data is included for the demo; clear it from the login screen ("Start with my own data") or Me → Clear sample data.
 
